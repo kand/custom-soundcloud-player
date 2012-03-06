@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<title>SoundCloud Custom Player Test</title>
+  
+	<link rel="stylesheet" href="sc/css/sc-treble.css" type="text/css" />
+
+	<script type="text/javascript">
+		// To fix an issue with gaGlobal variable
+		if(typeof gaGlobal === 'undefined') gaGlobal = {};
+	</script>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>	
+	<script type="text/javascript" src="sc/js/soundcloud.player.api.js"></script>
+	<script type="text/javascript" src="sc/js/sc-player.js"></script>
+	
+	<script type="text/javascript">
+		$.scPlayer.defaults.autoPlay = true;
+	
+		$(document).ready(function(e){
+			$('#playIt').click(function(e){
+				// clean up old player
+				$.scPlayer.stopAll();
+				$('.sc-player').remove();
+				
+				// build new player
+				var href = $('#nextSong').val();
+				var $atag = $('<a href="' + href + '" class="sc-player">');
+				$('#scholder').append($atag);
+				$atag.scPlayer({
+					autoPlay: true
+				});
+			});
+		});
+	</script>
+  
+</head>
+<body>
+	<h1>SoundCloud Custom Player</h1>
+  
+	<h3>Valid URLs</h3>
+	<p>Copy one of these urls into the input box, or find your own, and click DO IT.</p>
+	http://soundcloud.com/rougednb/enigma<br>
+	http://soundcloud.com/rogueuk/rogue-life-time<br>
+	http://soundcloud.com/rogueuk/coldplay-clocks-rogue-dubstep<br>
+  
+  <input id="nextSong" type="text" style="width:300px;"/><button id="playIt">DO IT</button>
+  
+  <div id="scholder" style="width:400px">
+	<a href="http://soundcloud.com/rougednb/enigma" class="sc-player"></a>
+  </div>
+</body>
+</html>

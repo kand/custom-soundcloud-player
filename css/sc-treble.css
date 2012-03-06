@@ -1,0 +1,134 @@
+@font-face{
+	font-family: ITCAvantGardeStd;
+	src: url(/public/fonts/ITCAvantGardeStd-Demi.otf);
+}
+
+.sc-player {
+	background: rgba(0,0,0,0.4);
+	height:75px;
+	width:inherit;
+	font-family: ITCAvantGardeStd;
+	color: #f9b03f;
+}
+.sc-player a {
+  text-decoration: none;
+  color:inherit;
+}
+
+
+/* artwork */
+.sc-artwork-list{
+	display:none;
+}
+
+/* info */
+.sc-player .sc-info-toggle{
+	display:none;
+}
+.sc-info {
+	color: #f9b03f;
+	overflow:hidden;
+	padding: 0 0 0 5px;
+}
+.sc-info h3{
+	margin: -5px 0 0;
+	font-size: 2.5em;
+}
+.sc-info h4{
+	margin: 0;
+}
+.sc-info p{
+	display:none;
+}
+.sc-info .sc-info-close{
+	display:none;
+}
+
+/* controls */
+.sc-player .sc-controls{
+	display: none;
+}
+
+/* scrubber */
+
+.sc-scrubber {
+	top:-65px;
+	width:inherit;
+	position:relative;
+	height:inherit;
+	z-index:-1;
+}
+
+.sc-scrubber .sc-time-span{
+	width:inherit;
+	height:inherit;
+}
+.sc-scrubber .sc-time-span .sc-waveform-container{
+	position:relative;
+	top:-9px;
+	width:inherit;
+	height:inherit;
+}
+.sc-scrubber .sc-time-span .sc-waveform-container img{
+	width:inherit;
+	height:inherit;
+}
+.sc-scrubber .sc-buffer, .sc-scrubber .sc-played{
+	width:0;
+	height: inherit;
+	position: relative;
+}
+.sc-scrubber .sc-played{ 
+	top: -159px; 
+	background-color: #f9b03f; 
+	z-index: -2;
+}
+.sc-scrubber .sc-buffer{ 
+	top: -84px; 
+	background-color: rgba(249, 176, 63, 0.5); 
+	z-index: -3;
+}
+
+.sc-track-duration {
+}
+.sc-scrubber .sc-time-indicators{
+	float:right;
+	position:relative;
+	font-size: 0.5em;
+	top: -1.3em;
+}
+
+/* Track listings*/
+
+.sc-player .sc-trackslist {
+	display:none;
+}
+
+/* volume control */
+
+.sc-volume-slider {
+	background-color:#eeeeee;
+	height:10%;
+	position:relative;
+	top:73px;
+	width:88%;
+}
+.sc-volume-slider .sc-volume-status{
+	background-color: #cccccc;
+	display:block;
+	height:100%;
+}
+
+/* utilities */
+
+.sc-player .hidden {
+  display: none;
+}
+
+.sc-player-engine-container{
+  width: 1px;
+  height: 1px;
+  position: fixed;
+  top: 2px;
+  left: 2px;
+}
